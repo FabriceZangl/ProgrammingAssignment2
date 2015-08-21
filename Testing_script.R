@@ -7,8 +7,14 @@
 #################################
 mat1 <- matrix(c(9,0,0,0,9,0,0,0,9),nrow = 3, ncol = 3)
 mat2 <- matrix(c(4,0,0,4),nrow = 2, ncol = 2)
-solve(mat1)
 source("ProgAssignment2/cachematrix.R")
-makeCacheMatrix(mat2)
-cacheSolve(makeCacheMatrix)
-undebug(cacheSolve)
+my_mymatfun <- makeCacheMatrix(mat2)
+debug(cacheSolve)
+cacheSolve(my_mymatfun)
+
+### Example
+vec1 <- c(7,8,9)
+source("ProgAssignment2/cachevector.R")
+my_myvecfun <- makeVector(vec1)
+debug(cachemean)
+cachemean(my_myvecfun)
